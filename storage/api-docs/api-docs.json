@@ -1,0 +1,39 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Documentation des services Web",
+        "description": "Documentation pour le projet de développement de services Web. \r\n *   Tutoriels sur Atomrace.com",
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.2"
+    },
+    "servers": [
+        {
+            "url": "http://my-default-host.com",
+            "description": "Serveur"
+        }
+    ],
+    "paths": {
+        "/": {}
+    },
+    "components": {
+        "securitySchemes": {
+            "Oauth2Password": {
+                "type": "oauth2",
+                "description": "Utilisez client_id / client_secret et \r\n *                votre courriel / mot de passe pour \r\n *                obtenir un jeton d'authentification.",
+                "in": "header",
+                "flows": {
+                    "password": {
+                        "authorizationUrl": "/oauth/authorize",
+                        "tokenUrl": "/oauth/token",
+                        "refreshUrl": "/oauth/token/refresh",
+                        "scopes": []
+                    }
+                },
+                "scheme": "bearer"
+            }
+        }
+    }
+}
